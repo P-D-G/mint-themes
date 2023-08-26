@@ -558,14 +558,32 @@ StScrollBar {
 
   &-bottom {
     box-shadow: 0 -1px $borders_color;
+    .panelCenter {
+      border-left: 1px solid $borders_color;
+      border-right: 1px solid $borders_color;
+      border-top: 1px solid $borders_color;
+      border-radius: 5px;
+    }
   }
 
   &-left {
     box-shadow: 1px 0 $borders_color;
+    .panelCenter {
+      border-bottom: 1px solid $borders_color;
+      border-right: 1px solid $borders_color;
+      border-top: 1px solid $borders_color;
+      border-radius: 5px;
+    }
   }
 
   &-right {
     box-shadow: -1px 0 $borders_color;
+    .panelCenter {
+      border-bottom: 1px solid $borders_color;
+      border-left: 1px solid $borders_color;
+      border-top: 1px solid $borders_color;
+      border-radius: 5px;
+    }
   }
 
   &-dummy {
