@@ -12,5 +12,10 @@ install: buildthemes
 	@rsync -qavhP --delete ${SOURCE_DIR}/Mint-Y-Dock* ${TARGET_DIR}/
 	@echo "Themes installed."
 
+uninstall:
+	@echo "Removing the themes from ${TARGET_DIR}..."
+	@rm -rf ${TARGET_DIR}/Mint-Y-Dock*
+	@echo "Themes uninstalled."
+
 clean:
 	rm -rf usr
