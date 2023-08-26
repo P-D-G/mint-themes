@@ -21,15 +21,15 @@ os.system("mkdir -p usr/share/themes")
 
 curdir = os.getcwd()
 
-os.chdir("src/Mint-Y")
+os.chdir("src/Mint-Y-Dock")
 os.system("./build-themes.py")
 os.chdir(curdir)
 
 # Mint-Y color variations
 for color in y_hex_colors1.keys():
     for variant in ["", "-Dark"]:
-        original_name = "Mint-Y%s" % variant
-        path = os.path.join("src/Mint-Y/variations/%s" % color)
+        original_name = "Mint-Y-Dock%s" % variant
+        path = os.path.join("src/Mint-Y-Dock/variations/%s" % color)
         if os.path.isdir(path):
             print("Derivating %s-%s" % (original_name, color))
 
@@ -38,7 +38,7 @@ for color in y_hex_colors1.keys():
             os.system("cp -R usr/share/themes/%s %s" % (original_name, theme))
 
             # Regenerate GTK4 sass
-            os.system("cp -R src/Mint-Y/gtk-4.0/sass %s/gtk-4.0/" % theme)
+            os.system("cp -R src/Mint-Y-Dock/gtk-4.0/sass %s/gtk-4.0/" % theme)
             y_colorize_directory("%s/gtk-4.0/sass" % theme, color)
             os.chdir("%s/gtk-4.0" % theme)
 
@@ -55,7 +55,7 @@ for color in y_hex_colors1.keys():
             os.chdir(curdir)
 
             # Regenerate GTK3 sass
-            os.system("cp -R src/Mint-Y/gtk-3.0/sass %s/gtk-3.0/" % theme)
+            os.system("cp -R src/Mint-Y-Dock/gtk-3.0/sass %s/gtk-3.0/" % theme)
             y_colorize_directory("%s/gtk-3.0/sass" % theme, color)
             os.chdir("%s/gtk-3.0" % theme)
             # os.system("sed -i 's/no-tint/tint/gI' ./sass/gtk.scss")
@@ -73,7 +73,7 @@ for color in y_hex_colors1.keys():
             os.chdir(curdir)
 
             # Regenerate Cinnamon sass
-            os.system("cp -R src/Mint-Y/cinnamon/sass %s/cinnamon/" % theme)
+            os.system("cp -R src/Mint-Y-Dock/cinnamon/sass %s/cinnamon/" % theme)
             y_colorize_directory("%s/cinnamon/sass" % theme, color)
             os.chdir("%s/cinnamon" % theme)
             if (variant == "-Dark"):
